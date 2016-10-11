@@ -1,0 +1,13 @@
+alias profile="$EDITOR ~/.zshrc.local"
+alias aliases="$EDITOR ~/.aliases.local
+alias gs="git status"
+alias gc="git commit"
+alias gd="git diff"
+alias co="git checkout"
+alias sprof="source ~/.zshrc"
+alias home='cd ~'
+alias vrc='vim ~/.vimrc.local'
+alias be='bundle exec'
+alias git=hub
+alias mux=tmuxinator
+alias l='ls -la'

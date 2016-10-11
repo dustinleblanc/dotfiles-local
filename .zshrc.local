@@ -1,0 +1,10 @@
+# load pyenv if available
+if which pyenv &>/dev/null ; then
+  eval "$(pyenv init -)"
+fi
+
+### COMPOSER
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+### Drupal Console
+source "$HOME/.console/console.rc" 2>/dev/null
