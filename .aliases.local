@@ -11,3 +11,4 @@ alias be='bundle exec'
 alias git=hub
 alias mux=tmuxinator
 alias l='ls -la'
+alias t1='php ~/code/pantheon-systems/terminus/bin/terminus.php'
