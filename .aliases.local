@@ -1,5 +1,5 @@
 alias profile="$EDITOR ~/.zshrc.local"
-alias aliases="$EDITOR ~/.aliases.local
+alias aliases="$EDITOR ~/.aliases.local"
 alias gs="git status"
 alias gc="git commit"
 alias gd="git diff"

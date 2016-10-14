@@ -8,3 +8,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 ### Drupal Console
 source "$HOME/.console/console.rc" 2>/dev/null
+
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
