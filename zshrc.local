@@ -1,3 +1,6 @@
+### Miniconda
+export PATH=/Users/dustinleblanc/miniconda2/bin:$PATH
+
 # load pyenv if available
 if which pyenv &>/dev/null ; then
   eval "$(pyenv init -)"
@@ -20,3 +23,5 @@ if [ -f '/Users/dustinleblanc/google-cloud-sdk/path.zsh.inc' ]; then source '/Us
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dustinleblanc/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/dustinleblanc/google-cloud-sdk/completion.zsh.inc'; fi
+
+if [ -f "$HOME/.kube_completion.zsh" ]; then source "$HOME/.kube_completion.zsh"; fi
