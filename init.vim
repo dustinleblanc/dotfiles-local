@@ -7,7 +7,9 @@ set softtabstop=4
 set shiftwidth=4
 "-------------Deoplete---------------"
 let g:deoplete#enable_at_startup = 1
-"-------------Search---------------"
+"-------------Emmet------------------"
+let g:user_emmet_mode='a'
+"-------------Search-----------------"
 set hlsearch
 nmap <Leader>ep :tabedit ~/.vim/plugins.vim<cr>
 set incsearch

@@ -12,6 +12,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'   
 Plugin 'iCyMind/NeoSolarized'
+Plugin 'mattn/emmet-vim'
 " Autocomplete
 Plugin 'SirVer/ultisnips'
 Plugin 'ervandew/supertab'
