@@ -3,7 +3,6 @@ Plug 'ervandew/supertab'
 Plug 'kchmck/vim-coffee-script'
 Plug 'majutsushi/tagbar'
 Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
