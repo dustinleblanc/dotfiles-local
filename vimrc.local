@@ -1,4 +1,16 @@
+"-------------Visuals---------------"
 colorscheme solarized
+set background=dark
+set nonumber
+set foldcolumn=2
+hi FoldColumn ctermbg=None
+hi vertsplit ctermbg=bg ctermbg=bg
+set linespace=15 			"GUI only
+set t_CO=256				"Use 256 colors for terminal vim
+set guioptions-=l			"No Scrollbars!
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
 """ AIRLINE SETUP
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -9,26 +21,51 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_theme = 'solarized'
 
-set tabstop=4
-if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.view set filetype=php
-  augroup END
-endif
+"-------------Mappings-------------"
+" Make it easy to edit .vimrc file.
+nmap <Leader>ev :tabedit $MYVIMRC<cr>
+nmap <Leader>ep :tabedit ~/.vim/plugins.vim<cr>
+nmap <Leader>es :edit ~/.vim/snippets
+" Get rid of search hilight.
+nmap <Leader><space> :nohlsearch<cr>
+
+" Browse Tags.
+nmap <C-R> :CtrlPBufTag<cr>
+nmap <Leader>f :tag<space>
+
+"-------------Laravel Specific--------"
+nmap <Leader>lr :e routes/web.php<cr>
+nmap <Leader>lm :! php artisan make:
+
+
+"-------------Auto-Commands--------"
+" Autoreload config file on save.
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost $MYVIMRC source %
+augroup END
+
+"-----------PHP General settings --"
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+let g:php_cs_fixer_level = "psr2"                   " options: --level (default:symfony)
+augroup php
+	autocmd BufRead,BufNewFile *.php set tabstop=4
+augroup END
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Drupal *.module and *.install files.
+augroup module
+	autocmd BufRead,BufNewFile *.module set filetype=php
+	autocmd BufRead,BufNewFile *.install set filetype=php
+	autocmd BufRead,BufNewFile *.test set filetype=php
+	autocmd BufRead,BufNewFile *.inc set filetype=php
+	autocmd BufRead,BufNewFile *.profile set filetype=php
+	autocmd BufRead,BufNewFile *.view set filetype=php
+augroup END
+"-------------Emmet------------------"
+let g:user_emmet_mode='a'
