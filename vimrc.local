@@ -1,17 +1,22 @@
-"-------------Visuals---------------"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" DUSTIN'S VIM CONFIG OF DOOM
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Visuals """
 colorscheme solarized
 set background=dark
 set nonumber
 set foldcolumn=2
 hi FoldColumn ctermbg=None
 hi vertsplit ctermbg=bg ctermbg=bg
-set linespace=15 			"GUI only
-set t_CO=256				"Use 256 colors for terminal vim
-set guioptions-=l			"No Scrollbars!
+set t_CO=256
+
+" No scrollbars
+set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-""" AIRLINE SETUP
+
+""" Airline Setup
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -21,10 +26,14 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_theme = 'solarized'
 
+""" Deoplete
+let g:neocomplete#enable_at_startup = 1
+
+
 "-------------Mappings-------------"
 " Make it easy to edit .vimrc file.
-nmap <Leader>ev :tabedit $MYVIMRC<cr>
-nmap <Leader>ep :tabedit ~/.vim/plugins.vim<cr>
+nmap <Leader>ev :tabedit ~/.vimrc.local<cr>
+nmap <Leader>ep :tabedit ~/.vimrc.bundles.local<cr>
 nmap <Leader>es :edit ~/.vim/snippets
 " Get rid of search hilight.
 nmap <Leader><space> :nohlsearch<cr>
@@ -42,7 +51,7 @@ nmap <Leader>lm :! php artisan make:
 " Autoreload config file on save.
 augroup autosourcing
 	autocmd!
-	autocmd BufWritePost $MYVIMRC source %
+	autocmd BufWritePost ~/.vimrc.local source %
 augroup END
 
 "-----------PHP General settings --"

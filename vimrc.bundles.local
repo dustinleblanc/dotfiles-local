@@ -1,9 +1,17 @@
+""" General
 Plug 'altercation/vim-colors-solarized'
 Plug 'ervandew/supertab'
-Plug 'kchmck/vim-coffee-script'
 Plug 'majutsushi/tagbar'
-Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/deoplete.nvim'
+
+""" PHP
+Plug 'StanAngeloff/php.vim'
+Plug 'arnaud-lb/vim-php-namespace'
+""" JS
+Plug 'jelera/vim-javascript-syntax'
+Plug 'marijnh/tern_for_vim'
 
 
