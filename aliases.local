@@ -10,3 +10,4 @@ alias vrc='vim ~/.vimrc.local'
 alias be='bundle exec'
 alias git=hub
 alias l='ls -la'
+alias vim=nvim
